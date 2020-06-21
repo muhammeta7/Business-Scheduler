@@ -28,6 +28,14 @@ public class AppointmentTest {
     }
 
     @Test
+    public void getAndSetTitleTest(){
+        appointment.setTitle("sporting event");
+        String expected = "sporting event";
+        String actual = appointment.getTitle();
+        assertEquals(expected, actual);
+    }
+
+    @Test
     public void getAndSetDescription(){
         appointment.setDescription("Basketball Game");
         String expected = "Basketball Game";
