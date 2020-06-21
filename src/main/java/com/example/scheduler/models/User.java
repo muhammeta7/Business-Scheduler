@@ -11,6 +11,7 @@ public class User {
     private Long id;
     private String name;
     private String email;
+    private String password;
 //    @OneToMany
 //    private List<Appointment> appointments;
 
@@ -40,7 +41,15 @@ public class User {
         this.email = email;
     }
 
-//    public List<Appointment> getAppointments() {
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    //    public List<Appointment> getAppointments() {
 //        return appointments;
 //    }
 //
