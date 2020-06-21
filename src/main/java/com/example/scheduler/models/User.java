@@ -5,14 +5,14 @@ import java.util.List;
 
 @Entity
 public class User {
-    // Long id, name, email, List<Appointment>
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
     private String email;
-    @OneToMany
-    private List<Appointment> appointments;
+//    @OneToMany
+//    private List<Appointment> appointments;
 
     public User(){};
 
@@ -40,11 +40,11 @@ public class User {
         this.email = email;
     }
 
-    public List<Appointment> getAppointments() {
-        return appointments;
-    }
-
-    public void setAppointments(List<Appointment> appointments) {
-        this.appointments = appointments;
-    }
+//    public List<Appointment> getAppointments() {
+//        return appointments;
+//    }
+//
+//    public void setAppointments(List<Appointment> appointments) {
+//        this.appointments = appointments;
+//    }
 }
