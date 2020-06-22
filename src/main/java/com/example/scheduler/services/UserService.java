@@ -1,4 +1,5 @@
 package com.example.scheduler.services;
+import com.example.scheduler.models.User;
 import com.example.scheduler.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -11,4 +12,6 @@ public class UserService {
     public UserService(UserRepository userRepo) {
         this.userRepo = userRepo;
     }
+
+
 }
