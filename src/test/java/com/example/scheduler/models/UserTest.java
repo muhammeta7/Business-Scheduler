@@ -38,6 +38,14 @@ public class UserTest {
     }
 
     @Test
+    public void getAndSetUsernameTest(){
+        user.setUsername("username12");
+        String expected = "username12";
+        String actual = user.getUsername();
+        assertEquals(expected, actual);
+    }
+
+    @Test
     public void getAndSetPasswordTest(){
         user.setPassword("password");
         String expected = "password";
