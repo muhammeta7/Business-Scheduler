@@ -1,10 +1,9 @@
 package com.example.scheduler.models;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.time.LocalDate;
+import java.util.List;
+import java.util.Set;
 
 @Entity
 public class Appointment {
@@ -16,7 +15,9 @@ public class Appointment {
     private String description;
     private LocalDate start;
     private LocalDate end;
-    // private User creater;
+//    @ManyToOne
+//    @JoinColumn(name = "user_id")
+//    private List<User> creater;
 
 
     public Appointment(){}
