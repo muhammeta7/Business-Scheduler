@@ -36,4 +36,4 @@ mvnw
 mvnw.cmd
 
 ### Spring resources ###
-.src/main/resources/
+.src/main/resources*
