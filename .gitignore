@@ -34,3 +34,6 @@ build/
 .mvn
 mvnw
 mvnw.cmd
+
+### Spring resources ###
+/src/main/resources/*
