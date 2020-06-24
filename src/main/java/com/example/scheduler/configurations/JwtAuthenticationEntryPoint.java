@@ -1,5 +1,4 @@
 package com.example.scheduler.configurations;
-
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.web.AuthenticationEntryPoint;
 import javax.servlet.ServletException;
