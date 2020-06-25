@@ -3,6 +3,7 @@ import javax.persistence.*;
 import java.time.LocalDate;
 
 @Entity
+@Table(name="appointments")
 public class Appointment {
 
     @Id
@@ -10,8 +11,8 @@ public class Appointment {
     private Long id;
     private String title;
     private String description;
-    private LocalDate start;
-    private LocalDate end;
+    // private LocalDate start;
+    // private LocalDate end;
 //    @ManyToOne
 //    @JoinColumn(name = "user_id")
 //    private List<User> creater;
@@ -43,19 +44,19 @@ public class Appointment {
         this.description = description;
     }
 
-    public LocalDate getStart() {
-        return start;
-    }
-
-    public void setStart(LocalDate start) {
-        this.start = start;
-    }
-
-    public LocalDate getEnd() {
-        return end;
-    }
-
-    public void setEnd(LocalDate end) {
-        this.end = end;
-    }
+//    public LocalDate getStart() {
+//        return start;
+//    }
+//
+//    public void setStart(LocalDate start) {
+//        this.start = start;
+//    }
+//
+//    public LocalDate getEnd() {
+//        return end;
+//    }
+//
+//    public void setEnd(LocalDate end) {
+//        this.end = end;
+//    }
 }

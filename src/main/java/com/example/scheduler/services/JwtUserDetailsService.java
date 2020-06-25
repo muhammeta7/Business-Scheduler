@@ -16,8 +16,8 @@ public class JwtUserDetailsService implements UserDetailsService {
 
     private UserRepository userRepository;
 
-    @Autowired
-    private PasswordEncoder bcryptEncoder;
+//    @Autowired
+//    private PasswordEncoder bcryptEncoder;
 
     @Autowired
     public JwtUserDetailsService(UserRepository userRepository) {
@@ -39,10 +39,10 @@ public class JwtUserDetailsService implements UserDetailsService {
         return userRepository.findByUsername(username).isPresent();
     }
 
-    public User save(User user){
-        User newUser = new User();
-        newUser.setUsername(user.getUsername());
-        newUser.setPassword(bcryptEncoder.encode(user.getPassword()));
-        return userRepository.save(newUser);
-    }
+//    public User save(User user){
+//        User newUser = new User();
+//        newUser.setUsername(user.getUsername());
+//        newUser.setPassword(bcryptEncoder.encode(user.getPassword()));
+//        return userRepository.save(newUser);
+//    }
 }

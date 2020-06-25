@@ -43,19 +43,19 @@ public class AppointmentTest {
         assertEquals(expected, actual);
     }
 
-    @Test
-    public void getAndSetStartTest(){
-        LocalDate expected = LocalDate.now();
-        appointment.setStart(expected);
-        LocalDate actual = appointment.getStart();
-        assertEquals(expected, actual);
-    }
-
-    @Test
-    public void getAndSetEndTest(){
-        LocalDate expected = LocalDate.now();
-        appointment.setEnd(expected);
-        LocalDate actual = appointment.getEnd();
-        assertEquals(expected, actual);
-    }
+//    @Test
+//    public void getAndSetStartTest(){
+//        LocalDate expected = LocalDate.now();
+//        appointment.setStart(expected);
+//        LocalDate actual = appointment.getStart();
+//        assertEquals(expected, actual);
+//    }
+//
+//    @Test
+//    public void getAndSetEndTest(){
+//        LocalDate expected = LocalDate.now();
+//        appointment.setEnd(expected);
+//        LocalDate actual = appointment.getEnd();
+//        assertEquals(expected, actual);
+//    }
 }
