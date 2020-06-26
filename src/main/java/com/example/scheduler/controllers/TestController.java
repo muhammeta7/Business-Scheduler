@@ -2,12 +2,13 @@ package com.example.scheduler.controllers;
 
 import com.example.scheduler.models.Employee;
 import com.example.scheduler.models.TutorialUser;
+import com.example.scheduler.models.User;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
 
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin
 @RestController
 public class TestController {
 
@@ -19,9 +20,9 @@ public class TestController {
     }
 
     @GetMapping(produces = "application/json")
-    @RequestMapping({ "/validateLogin" })
-    public TutorialUser validateLogin() {
-        return new TutorialUser("User successfully authenticated");
+    @RequestMapping(path = { "/employees/validateLogin" })
+    public User validateLogin() {
+        return new User();
     }
 
     @DeleteMapping(path = { "/{id}" })
