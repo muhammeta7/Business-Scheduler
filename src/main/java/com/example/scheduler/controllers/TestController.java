@@ -1,10 +1,7 @@
 package com.example.scheduler.controllers;
 
 import com.example.scheduler.models.Employee;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,6 +15,26 @@ public class TestController {
     @RequestMapping(value = "/employees", method = RequestMethod.GET, produces = "application/json")
     public List<Employee> firstPage() {
         return employees;
+    }
+
+    @DeleteMapping(path = { "/{id}" })
+    public Employee delete(@PathVariable("id") int id) {
+        Employee deletedEmp = null;
+        for (Employee emp : employees) {
+            if (emp.getEmpId().equals(id)) {
+                employees.remove(emp);
+                deletedEmp = emp;
+                break;
+            }
+        }
+        return deletedEmp;
+    }
+
+    @PostMapping
+    public Employee create(@RequestBody Employee user) {
+        employees.add(user);
+        System.out.println(employees);
+        return user;
     }
 
     private static List<Employee> createList() {
