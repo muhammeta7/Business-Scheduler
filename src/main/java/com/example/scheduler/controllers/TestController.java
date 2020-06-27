@@ -2,7 +2,6 @@ package com.example.scheduler.controllers;
 
 import com.example.scheduler.models.Employee;
 import com.example.scheduler.models.TutorialUser;
-import com.example.scheduler.models.User;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
