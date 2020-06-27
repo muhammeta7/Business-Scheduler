@@ -8,21 +8,22 @@ import org.springframework.web.bind.annotation.*;
 import java.util.ArrayList;
 import java.util.List;
 
-@CrossOrigin
+@CrossOrigin()
 @RestController
+@RequestMapping("/employees")
 public class TestController {
 
     private List<Employee> employees = createList();
 
-    @RequestMapping(value = "/employees", method = RequestMethod.GET, produces = "application/json")
+    @GetMapping(produces = "application/json")
     public List<Employee> firstPage() {
         return employees;
     }
 
     @GetMapping(produces = "application/json")
-    @RequestMapping(path = { "/employees/validateLogin" })
-    public User validateLogin() {
-        return new User();
+    @RequestMapping({ "/validateLogin" })
+    public TutorialUser validateLogin() {
+        return new TutorialUser("User successfully authenticated");
     }
 
     @DeleteMapping(path = { "/{id}" })
