@@ -11,6 +11,7 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import java.util.ArrayList;
+import java.util.Optional;
 
 
 @Service
@@ -24,12 +25,16 @@ public class JwtUserDetailsService implements UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        if ("username".equals(username)) {
-            return new User("username", "password",
-                    new ArrayList<>());
-        } else {
+        Optional<DAOUser> user = userDaoRepo.findByUsername(username);
+        if (!user.isPresent()) {
             throw new UsernameNotFoundException("User not found with username: " + username);
         }
+        return new org.springframework.security.core.userdetails.User(user.get().getUsername(), user.get().getPassword(),
+                new ArrayList<>());
+    }
+
+    public Boolean findUserByUsername(String username){
+        return userDaoRepo.findByUsername(username).isPresent();
     }
 
     public DAOUser save(UserDTO user) {
