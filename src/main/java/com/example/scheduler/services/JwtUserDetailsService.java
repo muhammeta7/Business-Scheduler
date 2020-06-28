@@ -33,6 +33,10 @@ public class JwtUserDetailsService implements UserDetailsService {
                 new ArrayList<>());
     }
 
+    public Boolean findUserByUsername(String username){
+        return userDaoRepo.findByUsername(username).isPresent();
+    }
+
     public DAOUser save(UserDTO user) {
         DAOUser newUser = new DAOUser();
         newUser.setUsername(user.getUsername());
