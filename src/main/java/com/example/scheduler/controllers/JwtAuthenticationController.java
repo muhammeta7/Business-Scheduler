@@ -3,6 +3,7 @@ package com.example.scheduler.controllers;
 import com.example.scheduler.configurations.JwtTokenUtil;
 import com.example.scheduler.models.JwtRequest;
 import com.example.scheduler.models.JwtResponse;
+import com.example.scheduler.models.UserDTO;
 import com.example.scheduler.services.JwtUserDetailsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -42,6 +43,11 @@ public class JwtAuthenticationController {
         final String token = jwtTokenUtil.generateToken(userDetails);
 
         return ResponseEntity.ok(new JwtResponse(token));
+    }
+
+    @RequestMapping(value = "/register", method = RequestMethod.POST)
+    public ResponseEntity<?> saveUser(@RequestBody UserDTO user) throws Exception {
+        return ResponseEntity.ok(userDetailsService.save(user));
     }
 
     private void authenticate(String username, String password) throws Exception {
