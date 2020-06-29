@@ -1,7 +1,6 @@
 package com.example.scheduler.controllers;
 
 import com.example.scheduler.models.Employee;
-import com.example.scheduler.models.TutorialUser;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
@@ -17,12 +16,6 @@ public class TestController {
     @GetMapping(produces = "application/json")
     public List<Employee> firstPage() {
         return employees;
-    }
-
-    @GetMapping(produces = "application/json")
-    @RequestMapping({ "/validateLogin" })
-    public TutorialUser validateLogin() {
-        return new TutorialUser("User successfully authenticated");
     }
 
     @DeleteMapping(path = { "/{id}" })

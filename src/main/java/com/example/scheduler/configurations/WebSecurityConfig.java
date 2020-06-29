@@ -3,6 +3,7 @@ package com.example.scheduler.configurations;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
@@ -52,6 +53,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         httpSecurity.csrf().disable()
                 // Don't authenticate this particular request
                 .authorizeRequests().antMatchers("/authenticate", "/register").permitAll().
+                    antMatchers(HttpMethod.OPTIONS, "/**").permitAll().
                 // All other requests need to be authenticated
                         anyRequest().authenticated().and().
                 // Use stateless session which won't be used to store user's state.
