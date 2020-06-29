@@ -4,7 +4,6 @@ import com.example.scheduler.models.DAOUser;
 import com.example.scheduler.models.UserDTO;
 import com.example.scheduler.repositories.UserDaoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
