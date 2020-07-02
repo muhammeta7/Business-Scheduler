@@ -2,15 +2,14 @@ package com.example.scheduler.models;
 
 import org.junit.Before;
 import org.junit.Test;
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
-public class UserTest {
-
-    private User user;
+public class DAOUserTest {
+    private DAOUser user;
 
     @Before
     public void setup(){
-        this.user = new User();
+        this.user = new DAOUser();
     }
 
     @Test
@@ -52,4 +51,5 @@ public class UserTest {
         String actual = user.getPassword();
         assertEquals(expected, actual);
     }
+
 }

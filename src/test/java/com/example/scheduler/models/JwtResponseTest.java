@@ -15,7 +15,7 @@ public class JwtResponseTest{
     @Test
     public void constructorTest(){
         String expected = "token";
-        String actual = jwtResponse.getJwtToken();
+        String actual = jwtResponse.getToken();
         assertEquals(expected, actual);
     }
 }
