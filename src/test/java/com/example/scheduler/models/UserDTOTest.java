@@ -26,4 +26,20 @@ public class UserDTOTest {
         String actual = user.getUsername();
         assertEquals(expected, actual);
     }
+
+    @Test
+    public void getAndSetEmailTest(){
+        user.setEmail("moe@email.com");
+        String expected = "moe@email.com";
+        String actual = user.getEmail();
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void getAndSetNameTest(){
+        user.setName("Moe Aydin");
+        String expected = "Moe Aydin";
+        String actual = user.getName();
+        assertEquals(expected, actual);
+    }
 }
